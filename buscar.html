@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inglés en Chicureo | Acompañándote en tu Certificación</title>
+  <title>Resultados de búsqueda | Inglés en Chicureo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
@@ -36,7 +36,7 @@
   <nav class="menu" aria-label="Menú principal">
     <div class="contenedor">
       <ul>
-        <li><a class="activo" href="index.html">Inicio</a></li>
+        <li><a href="index.html">Inicio</a></li>
         <li><a href="quienes-somos.html">Quiénes somos</a></li>
         <li><a href="examenes-y-certificaciones.html">Exámenes y certificaciones</a></li>
         <li><a href="deportistas-de-elite.html">Deportistas de élite</a></li>
@@ -54,13 +54,14 @@
   </nav>
 
   <main class="principal">
-    <section class="banner">
-      <img src="img/Banner Portada.png" alt="Grupo de personas sonriendo">
+    <section class="titulo-pagina">
+      <div class="contenedor">
+        <h2>Resultados de búsqueda</h2>
+        <p class="migas"><a href="index.html">Home</a><span>&gt;</span><strong>Búsqueda</strong></p>
+      </div>
     </section>
 
-    <section class="frase">
-      <h2>Vive la experiencia de aprender Inglés</h2>
-    </section>
+    <section class="contenido contenedor" id="resultados" aria-live="polite"></section>
   </main>
 
   <footer class="pie">
@@ -68,5 +69,7 @@
     Informes: inglesenchicureo@yahoo.es</p>
   </footer>
 
+  <script src="js/indice.js"></script>
+  <script src="js/resultados.js"></script>
 </body>
 </html>

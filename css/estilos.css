@@ -1,0 +1,91 @@
+:root {
+  --azul: #318ed2;
+  --texto: #4a4a4a;
+  --titulo: #404243;
+  --pie: #1d1d1d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Lato", Arial, sans-serif; color: var(--texto); background: #fff; display: flex; flex-direction: column; min-height: 100vh; }
+a { text-decoration: none; color: inherit; }
+
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+/* Barra superior */
+.topbar { background: var(--azul); color: #fff; font-size: 16px; }
+.topbar .contenedor { display: flex; align-items: center; gap: 10px; height: 55px; }
+.topbar svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 1.8; }
+
+/* Cabecera */
+.cabecera .contenedor { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 30px; padding-bottom: 45px; gap: 20px; flex-wrap: wrap; }
+.logo img { display: block; height: auto; width: 100%; max-width: 330px; }
+.logo h1 { font-family: "Roboto", Arial, sans-serif; font-size: 34px; line-height: 1.1; color: var(--texto); margin-top: 4px; }
+.logo p { font-size: 17px; color: #666; }
+.buscador { display: flex; align-items: center; width: 270px; margin-top: 10px; border-bottom: 1px solid #aaa; }
+.buscador input { flex: 1; border: 0; outline: 0; font: italic 17px Arial, sans-serif; padding: 8px 0; color: #555; background: transparent; }
+.buscador button { border: 0; background: none; cursor: pointer; padding: 4px; }
+.buscador svg { width: 20px; height: 20px; fill: none; stroke: #555; stroke-width: 2.5; }
+
+/* Menú */
+.menu { background: var(--azul); }
+.menu ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0 48px; }
+.menu a { display: block; padding: 32px 0; color: #fff; font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: -.3px; }
+.menu a.activo { color: rgba(255,255,255,.6); }
+.menu a:hover { color: rgba(255,255,255,.7); }
+
+/* Portada */
+.banner img { display: block; width: 100%; height: auto; }
+.frase { background: linear-gradient(rgba(40,42,43,.65), rgba(40,42,43,.65)), url("../img/mochila.jpeg") center / cover no-repeat; color: #fff; text-align: center; padding: 140px 20px 160px; }
+.frase h2 { font-size: clamp(30px, 4vw, 54px); font-weight: 700; }
+
+/* Páginas interiores */
+.principal { flex: 1; }
+.titulo-pagina .contenedor { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 45px; padding-bottom: 45px; }
+.titulo-pagina h2 { font-size: clamp(34px, 4vw, 52px); color: var(--titulo); font-weight: 700; }
+.migas { font-size: 19px; font-weight: 700; color: #777; }
+.migas a:hover { text-decoration: underline; }
+.migas span { color: var(--azul); margin: 0 8px; }
+.migas strong { color: #2a7cc0; font-weight: 400; }
+
+.contenido { padding-bottom: 90px; font-size: 24px; line-height: 1.8; }
+.contenido p { margin-bottom: 30px; }
+.contenido h3 { font-size: 30px; color: var(--titulo); margin: 10px 0 25px; }
+.contenido h4 { font-size: 28px; color: var(--titulo); margin: 45px 0 25px; }
+.contenido h5 { font-size: 22px; text-transform: uppercase; color: var(--titulo); margin: 35px 0 25px; }
+.contenido .enlace { color: var(--azul); }
+
+/* Pie */
+.pie { background: var(--pie); color: #999; text-align: center; padding: 80px 20px; font-size: 20px; line-height: 1.6; margin-top: auto; }
+
+@media (max-width: 800px) {
+  .menu ul { gap: 0 24px; }
+  .menu a { padding: 16px 0; font-size: 15px; }
+  .frase { padding: 70px 20px 80px; }
+  .contenido { font-size: 19px; }
+  .contenido h3 { font-size: 24px; }
+  .contenido h4 { font-size: 22px; }
+  .pie { font-size: 16px; padding: 50px 20px; }
+}
+
+/* Resultados de búsqueda */
+.resumen { font-size: 20px; color: #777; }
+.resultado { margin-bottom: 35px; }
+.resultado h3 { margin: 0 0 8px; font-size: 28px; }
+.resultado h3 a { color: var(--azul); }
+.resultado h3 a:hover { text-decoration: underline; }
+.resultado p { font-size: 20px; line-height: 1.6; margin: 0; }
+mark { background: #fff2a8; color: inherit; padding: 0 2px; }
+
+/* Submenú */
+.menu .tiene-submenu { position: relative; }
+.menu .submenu { display: none; flex-direction: column; flex-wrap: nowrap; gap: 0; position: absolute; top: 100%; left: 0; min-width: 333px; background: var(--azul); z-index: 20; box-shadow: 0 6px 12px rgba(0,0,0,.15); }
+.menu .tiene-submenu:hover > .submenu,
+.menu .tiene-submenu:focus-within > .submenu { display: flex; }
+.menu .submenu li { border-top: 1px solid rgba(255,255,255,.35); }
+.menu .submenu li:first-child { border-top: 0; }
+.menu .submenu a { padding: 18px 18px; line-height: 1.2; }
+
+@media (max-width: 800px) {
+  .menu .submenu { position: static; display: flex; min-width: 0; box-shadow: none; padding-left: 12px; }
+  .menu .submenu a { padding: 10px 0; font-size: 14px; }
+  .menu .submenu li { border-top: 0; }
+}
